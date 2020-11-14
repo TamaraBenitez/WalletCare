@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Registrarse";
+}
+
+@section Styles{ <link rel="stylesheet" href="~/css/registrarse.css" />}
+
+<div className="container-fluid" id="cajaPrincipal"> 
+
+    <div id="wc">WalletCare</div>
+    <form id="formulario" >
+         <div class="form-group">
+         <label for="nombre">Nombre de usuario</label>
+         <input type="text" placeholder="Nombre de usuario"  className="form-control margin-top font-size-weight" ></input>
+        </div>
+
+         <div class="form-group">
+         <label for="mail">Ingresar correo electronico</label>
+         <input type="email" placeholder="example@gmail.com" className="form-control margin-top font-size-weight" aria-describedby="emailHelp"></input>
+            </div>
+
+            <div class="form-group">
+        <label for="mail">Ingresar contraseña</label>
+        <input type="password" placeholder="Contraseña" className="form-control margin-top font-size-weight" ></input>
+        </div>
+        
+        <button type="submit" class="btn btn-dark margin-top-btn">Enviar</button>
+
+    </form>
+
+
+</div>
