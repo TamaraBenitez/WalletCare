@@ -1,6 +1,7 @@
-﻿@{
-    ViewData["Title"] = "Registrarse";
+@{
+    ViewData["Title"] = "Ingresar";
 }
+
 
 @section Styles{ <link rel="stylesheet" href="~/css/registrarse.css" />}
 
@@ -8,11 +9,7 @@
 
     <div id="wc">WalletCare</div>
     <form id="formulario" >
-         <div class="form-group">
-         <label for="nombre">Nombre de usuario</label>
-         <input type="text" placeholder="Nombre de usuario"  className="form-control margin-top font-size-weight" ></input>
-        </div>
-
+         
          <div class="form-group">
          <label for="mail">Ingresar correo electronico</label>
          <input type="email" placeholder="example@gmail.com" className="form-control margin-top font-size-weight" aria-describedby="emailHelp"></input>
@@ -23,7 +20,9 @@
         <input type="password" placeholder="Contraseña" className="form-control margin-top font-size-weight" ></input>
         </div>
         
-        <button id="registrar" type="submit" class="btn btn-dark margin-top-btn">Registrarte</button>
+        <button type="submit" class="btn btn-dark margin-top-btn">Iniciar sesión</button>
+
+
     </form>
 
 

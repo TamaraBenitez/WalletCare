@@ -28,6 +28,12 @@ namespace walletCare.Controllers
             return View();
         }
 
+            public IActionResult Ingresar()
+        {
+            return View();
+        }
+
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
