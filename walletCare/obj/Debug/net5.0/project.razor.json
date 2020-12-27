@@ -15633,6 +15633,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\usuario\\Desktop\\GITHUB\\WalletCare\\walletCare\\Views\\Home\\ResultadoRegistro.cshtml",
+      "TargetPath": "Views\\Home\\ResultadoRegistro.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\usuario\\Desktop\\GITHUB\\WalletCare\\walletCare\\Views\\Home\\Ingresar.cshtml",
       "TargetPath": "Views\\Home\\Ingresar.cshtml",
       "FileKind": "mvc"

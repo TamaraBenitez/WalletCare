@@ -31,6 +31,53 @@ namespace walletCare.Controllers
             return View();
         }
 
+        [HttpPost]
+        public IActionResult Registrarse (string email, string nombre,string contraseña) {
+
+            Usuario validarUsuario= db.Usuarios.FirstOrDefault(u => u.Mail==email);
+
+            if(validarUsuario==null){
+
+
+                  Usuario nuevoUsuario= new Usuario {
+
+                    Mail=email,
+                    NombreDeUsuario= nombre,
+                    Password= contraseña
+                }; 
+
+                db.Usuarios.Add(nuevoUsuario);
+                db.SaveChanges();
+
+                return View("ResultadoRegistro");
+
+            }
+
+               else {
+
+                    ViewBag.MailRegistrado=true;
+                   return View("ResultadoRegistro");
+               }
+           
+
+
+        }
+
+        public IActionResult ResultadoRegistro () {
+
+            return View();
+        }
+
+
+            public JsonResult ConsultarUsuarioEnSesion() {
+
+
+                Usuario usuario = HttpContext.Session.Get<Usuario>("UsuarioLogueado");
+                return Json(usuario);
+
+            }
+
+
             public IActionResult Ingresar()
         {
             return View();
@@ -56,6 +103,12 @@ namespace walletCare.Controllers
 
 
             return Json(db.Ingresos.ToList());
+        }
+
+         public JsonResult ConsultarUsuarios(){
+
+
+            return Json(db.Usuarios.ToList());
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
