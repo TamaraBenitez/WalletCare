@@ -9,8 +9,8 @@ using generico.Models;
 namespace walletCare.Migrations
 {
     [DbContext(typeof(UsuarioContext))]
-    [Migration("20201128023546_CreacionInicial")]
-    partial class CreacionInicial
+    [Migration("20201227235313_Inicio")]
+    partial class Inicio
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
