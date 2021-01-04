@@ -17,7 +17,8 @@ namespace generico.Models{
         [Required]
         public DateTime fecha {get;set;}
 
-        [Required]
+        
+       [Required]
         public Usuario Propietario {get;set;}
 
     }

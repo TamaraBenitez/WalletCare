@@ -8,9 +8,8 @@ namespace generico.Models
     {
 
 
-        
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-         public int ID {get;set;} 
+       
+       
      
        [Key]
       [Required]
@@ -24,8 +23,8 @@ namespace generico.Models
         public string Password {get;set;}
         
 
+      public List<Ingreso> Ingresos {get;set;} 
 
-        public List<Ingreso> Ingresos {get;set;} 
-
+       
     }
 }

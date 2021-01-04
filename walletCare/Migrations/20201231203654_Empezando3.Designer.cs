@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using generico.Models;
 
 namespace walletCare.Migrations
 {
     [DbContext(typeof(UsuarioContext))]
-    partial class UsuarioContextModelSnapshot : ModelSnapshot
+    [Migration("20201231203654_Empezando3")]
+    partial class Empezando3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -25,16 +27,10 @@ namespace walletCare.Migrations
                     b.Property<double>("Aporte")
                         .HasColumnType("REAL");
 
-                    b.Property<string>("PropietarioMail")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
-
                     b.Property<DateTime>("fecha")
                         .HasColumnType("TEXT");
 
                     b.HasKey("ID");
-
-                    b.HasIndex("PropietarioMail");
 
                     b.ToTable("Ingresos");
                 });
@@ -43,6 +39,9 @@ namespace walletCare.Migrations
                 {
                     b.Property<string>("Mail")
                         .HasColumnType("TEXT");
+
+                    b.Property<int>("ID")
+                        .HasColumnType("INTEGER");
 
                     b.Property<string>("NombreDeUsuario")
                         .IsRequired()
@@ -55,22 +54,6 @@ namespace walletCare.Migrations
                     b.HasKey("Mail");
 
                     b.ToTable("Usuarios");
-                });
-
-            modelBuilder.Entity("generico.Models.Ingreso", b =>
-                {
-                    b.HasOne("generico.Models.Usuario", "Propietario")
-                        .WithMany("Ingresos")
-                        .HasForeignKey("PropietarioMail")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Propietario");
-                });
-
-            modelBuilder.Entity("generico.Models.Usuario", b =>
-                {
-                    b.Navigation("Ingresos");
                 });
 #pragma warning restore 612, 618
         }

@@ -15623,18 +15623,33 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\usuario\\Desktop\\GITHUB\\WalletCare\\walletCare\\Views\\User\\ResultadoIngreso.cshtml",
+      "TargetPath": "Views\\User\\ResultadoIngreso.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\usuario\\Desktop\\GITHUB\\WalletCare\\walletCare\\Views\\Shared\\_LayoutUser.cshtml",
+      "TargetPath": "Views\\Shared\\_LayoutUser.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\usuario\\Desktop\\GITHUB\\WalletCare\\walletCare\\Views\\User\\NuevoAhorro.cshtml",
+      "TargetPath": "Views\\User\\NuevoAhorro.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\usuario\\Desktop\\GITHUB\\WalletCare\\walletCare\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\usuario\\Desktop\\GITHUB\\WalletCare\\walletCare\\Views\\Home\\ConsultarIngresos.cshtml",
-      "TargetPath": "Views\\Home\\ConsultarIngresos.cshtml",
+      "FilePath": "c:\\Users\\usuario\\Desktop\\GITHUB\\WalletCare\\walletCare\\Views\\Home\\ResultadoRegistro.cshtml",
+      "TargetPath": "Views\\Home\\ResultadoRegistro.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\usuario\\Desktop\\GITHUB\\WalletCare\\walletCare\\Views\\Home\\ResultadoRegistro.cshtml",
-      "TargetPath": "Views\\Home\\ResultadoRegistro.cshtml",
+      "FilePath": "c:\\Users\\usuario\\Desktop\\GITHUB\\WalletCare\\walletCare\\Views\\User\\Index.cshtml",
+      "TargetPath": "Views\\User\\Index.cshtml",
       "FileKind": "mvc"
     },
     {

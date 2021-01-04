@@ -9,8 +9,8 @@ using generico.Models;
 namespace walletCare.Migrations
 {
     [DbContext(typeof(UsuarioContext))]
-    [Migration("20201227235313_Inicio")]
-    partial class Inicio
+    [Migration("20201231210128_Empezando")]
+    partial class Empezando
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -45,10 +45,6 @@ namespace walletCare.Migrations
                 {
                     b.Property<string>("Mail")
                         .HasColumnType("TEXT");
-
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
 
                     b.Property<string>("NombreDeUsuario")
                         .IsRequired()

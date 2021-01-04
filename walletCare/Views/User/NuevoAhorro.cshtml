@@ -1,0 +1,27 @@
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+@section Styles{ <link rel="stylesheet" href="~/css/nuevoIngreso.css" />}
+
+<div class="container-fluid" id="principio">
+   
+    <div class="row">
+        <div class="columnaIzquierda col-md-6 col-sm-12">
+            <img class="foto-ahorro" src="~/images/fondoi.jpg" />
+        </div>
+        <div class="columnaDerecha col-md-6 col-sm-12" id="aport">
+            <h1>Nuevo ahorro </h1>
+
+     <form id="formulario" method="POST" asp-action="AgregarIngreso" asp-controller="User">
+         
+         <div class="form-group">
+        <img class="foto-a" src="~/images/ahorro.png" />
+         <input type="ingreso" placeholder="$" name="aporte" className="form-control margin-top font-size-weight" aria-describedby="emailHelp"></input>
+            </div>
+
+            <button type="submit" class="btn btn-dark margin-top-btn">Guardar</button>
+     </form>
+
+        </div>

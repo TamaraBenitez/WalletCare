@@ -15,10 +15,15 @@ namespace walletCare.Controllers
         private readonly ILogger<HomeController> _logger;
         private readonly UsuarioContext db;
 
+        
+
+    
+
         public HomeController(ILogger<HomeController> logger,UsuarioContext contexto)
         {
             _logger = logger;
             db=contexto;
+          
         }
 
         public IActionResult Index()
@@ -31,6 +36,9 @@ namespace walletCare.Controllers
             return View();
         }
 
+     
+
+
         [HttpPost]
         public IActionResult Registrarse (string email, string nombre,string contraseña) {
 
@@ -41,6 +49,7 @@ namespace walletCare.Controllers
 
                   Usuario nuevoUsuario= new Usuario {
 
+                   
                     Mail=email,
                     NombreDeUsuario= nombre,
                     Password= contraseña
@@ -48,7 +57,6 @@ namespace walletCare.Controllers
 
                 db.Usuarios.Add(nuevoUsuario);
                 db.SaveChanges();
-
                 return View("ResultadoRegistro");
 
             }
@@ -69,6 +77,49 @@ namespace walletCare.Controllers
         }
 
 
+        public JsonResult AgregarUsuarioALaSession(string email,string contraseña)
+        {
+            Usuario nuevoUsuario = new Usuario{
+               
+                    Mail=email,
+                    Password= contraseña
+            };
+
+            HttpContext.Session.Set<Usuario>("UsuarioLogueado", nuevoUsuario);
+            return Json(nuevoUsuario);
+        }
+
+
+            [HttpPost]
+            public IActionResult Ingresar (string email, string contraseña) {
+
+                Usuario buscarUsuario= db.Usuarios.FirstOrDefault(u => u.Mail == email);
+
+                if (buscarUsuario!=null) {
+
+                    if(buscarUsuario.Password==contraseña) {
+
+                        HttpContext.Session.Set<Usuario>("UsuarioLogueado", buscarUsuario);
+                        return RedirectToAction("Index","User");
+
+                    }
+                    else {
+
+                        ViewBag.LoginError = true ;
+                        return View ("Ingresar");
+                    }
+
+
+                       } else {
+
+                        ViewBag.LoginError = true ;
+                        return View ("Ingresar");
+                    
+                }
+
+            }
+
+
             public JsonResult ConsultarUsuarioEnSesion() {
 
 
@@ -83,27 +134,7 @@ namespace walletCare.Controllers
             return View();
         }
 
-        public string AgregarIngreso(double aporte) {
-
-                Ingreso nuevoIngreso = new Ingreso(){
-
-                    Aporte=aporte,
-                    fecha=DateTime.Now
-                };
-
-                db.Ingresos.Add(nuevoIngreso);
-                db.SaveChanges();
-
-                return "ok";
-
-        } 
-
-
-        public JsonResult ConsultarIngresos(){
-
-
-            return Json(db.Ingresos.ToList());
-        }
+       
 
          public JsonResult ConsultarUsuarios(){
 
