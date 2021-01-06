@@ -25,16 +25,19 @@ namespace walletCare.Migrations
                     b.Property<double>("Aporte")
                         .HasColumnType("REAL");
 
-                    b.Property<string>("PropietarioMail")
-                        .IsRequired()
+                    b.Property<string>("UsuarioMail")
                         .HasColumnType("TEXT");
 
                     b.Property<DateTime>("fecha")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("mailUsuario")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.HasKey("ID");
 
-                    b.HasIndex("PropietarioMail");
+                    b.HasIndex("UsuarioMail");
 
                     b.ToTable("Ingresos");
                 });
@@ -59,13 +62,9 @@ namespace walletCare.Migrations
 
             modelBuilder.Entity("generico.Models.Ingreso", b =>
                 {
-                    b.HasOne("generico.Models.Usuario", "Propietario")
+                    b.HasOne("generico.Models.Usuario", null)
                         .WithMany("Ingresos")
-                        .HasForeignKey("PropietarioMail")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Propietario");
+                        .HasForeignKey("UsuarioMail");
                 });
 
             modelBuilder.Entity("generico.Models.Usuario", b =>

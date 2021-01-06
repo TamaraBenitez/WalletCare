@@ -172,3 +172,5 @@ C:\Users\usuario\Desktop\GITHUB\WalletCare\walletCare\obj\Debug\net5.0\Razor\Vie
 C:\Users\usuario\Desktop\GITHUB\WalletCare\walletCare\obj\Debug\net5.0\Razor\Views\User\Index.cshtml.g.cs
 C:\Users\usuario\Desktop\GITHUB\WalletCare\walletCare\obj\Debug\net5.0\Razor\Views\User\NuevoAhorro.cshtml.g.cs
 C:\Users\usuario\Desktop\GITHUB\WalletCare\walletCare\obj\Debug\net5.0\Razor\Views\User\ResultadoIngreso.cshtml.g.cs
+C:\Users\usuario\Desktop\GITHUB\WalletCare\walletCare\obj\Debug\net5.0\Razor\Views\User\MostrarIngresos.cshtml.g.cs
+C:\Users\usuario\Desktop\GITHUB\WalletCare\walletCare\obj\Debug\net5.0\Razor\Views\User\ErrorUser.cshtml.g.cs

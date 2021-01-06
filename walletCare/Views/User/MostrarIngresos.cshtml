@@ -1,0 +1,40 @@
+@model IEnumerable<generico.Models.Ingreso>
+
+@{
+    ViewData["Title"] = "Home Page";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+@section Styles{ <link rel="stylesheet" href="~/css/mostrarIngresos.css" />}
+
+
+ <div class="container-fluid">
+
+
+     <div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Ordenar :
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="#" >Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+    <a class="dropdown-item" href="#">Something else here</a>
+  </div>
+</div>
+
+    <div class="row">
+
+        @foreach (var item in Model)
+        {
+            <div class ="col-md-3 col-sm-12" >
+         <div class="paper pink">
+        <div class="tape-section"></div>
+             <h1>Ahorro numero @item.ID</h1>
+                <p>Aporte : @item.Aporte </p>
+            <div class="tape-section"></div>
+            </div>
+        </div> }
+     </div>
+ </div>
+ 
+}

@@ -19,7 +19,7 @@ namespace generico.Models{
 
         
        [Required]
-        public Usuario Propietario {get;set;}
+        public string mailUsuario {get;set;}
 
     }
     

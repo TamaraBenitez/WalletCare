@@ -62,7 +62,7 @@ namespace walletCare.Controllers
                   
                     Aporte=aporte,
                     fecha=DateTime.Now,
-                    Propietario= usuarioBase
+                    mailUsuario = usuarioBase.Mail
                     
                 };
 
@@ -83,18 +83,7 @@ namespace walletCare.Controllers
 
         } 
 
-    public Usuario buscarUsuario(string mail) {
 
-        return db.Usuarios.FirstOrDefault(u => u.Mail.Equals(mail));
-    }
-
-
-    public JsonResult usuarioEnSesion () {
-
-        Usuario user= HttpContext.Session.Get<Usuario>("UsuarioLogueado");
-
-        return Json(buscarUsuario(user.Mail));
-    }
 
 
         public JsonResult ConsultarIngresos(){
@@ -102,6 +91,31 @@ namespace walletCare.Controllers
 
             return Json(db.Ingresos.ToList());
         }
+
+
+        public IActionResult MostrarIngresos() {
+
+           Usuario usuario= HttpContext.Session.Get<Usuario>("UsuarioLogueado");
+           if (usuario != null ) {
+
+               List<Ingreso> ahorros = new List<Ingreso>();
+               ahorros = db.Ingresos.Where(i => i.mailUsuario.Equals(usuario.Mail)).ToList();
+                return View ("MostrarIngresos",ahorros);
+
+
+           }
+            else {
+
+             return Redirect("/User/ErrorUser");
+            
+            }
+        }
+
+
+    public IActionResult ErrorUser() {
+
+        return View();
+    }
 
 
     }
