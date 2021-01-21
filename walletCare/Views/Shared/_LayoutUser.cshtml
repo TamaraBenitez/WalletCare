@@ -6,13 +6,14 @@
     <title>@ViewData["Title"] - WalletCare</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@1,500&display=swap" rel="stylesheet">
     @RenderSection("Styles", required: false)
 </head>
 <body>
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">WalletCare</a>
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="IndexUser">WalletCare</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -26,7 +27,8 @@
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                              <a class="dropdown-item" asp-area="" asp-controller="User" asp-action="NuevoAhorro">Nuevo ahorro</a>
                                  <div class="dropdown-divider"></div>
-                             <a class="dropdown-item" asp-area="" asp-controller="User" asp-action="MostrarIngresos">Mostrar ahorros</a>
+                             <a class="dropdown-item" asp-area="" asp-controller="User" asp-action="MostrarIngresos">Mostrar ahorros totales</a>
+                             <a class="dropdown-item" asp-area="" asp-controller="User" asp-action="PorMes">Mostrar ahorros por mes</a>
                      </div>
                     </li>
                              

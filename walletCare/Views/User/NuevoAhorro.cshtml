@@ -7,21 +7,26 @@
 
 <div class="container-fluid" id="principio">
    
-    <div class="row">
-        <div class="columnaIzquierda col-md-6 col-sm-12">
-            <img class="foto-ahorro" src="~/images/fondoi.jpg" />
-        </div>
+     <div class="ball">
+             </div>
+        <div class="shadow"></div>
+        
+    
+        
         <div class="columnaDerecha col-md-6 col-sm-12" id="aport">
-            <h1>Nuevo ahorro </h1>
+            
+            <h1 class="ahorro">Nuevo ahorro </h1>
 
      <form id="formulario" method="POST" asp-action="AgregarIngreso" asp-controller="User">
          
          <div class="form-group">
         <img class="foto-a" src="~/images/ahorro.png" />
-         <input type="ingreso" placeholder="$" name="aporte" className="form-control margin-top font-size-weight" aria-describedby="emailHelp"></input>
+         <input type="ingreso" placeholder="$" name="aporte" className="form-control margin-top font-size-weight" aria-describedby="emailHelp" id= "dinero"></input>
             </div>
 
-            <button type="submit" class="btn btn-dark margin-top-btn">Guardar</button>
+            <button type="submit" class="btn btn-dark margin-top-btn" id="guardar">Guardar</button>
      </form>
 
         </div>
+
+        
