@@ -7,9 +7,15 @@
    @section Styles{ <link rel="stylesheet" href="~/css/resultadoIngreso.css" />}
 
     @if(ingresoError) {
-    <h1>Debes iniciar sesion para realizar esta accion.  </h1>
+    <h1>Debes iniciar sesion para realizar esta accion.  <a type="button" href=/Home/Ingresar >Ingresar</a> </h1>
     } else {
 
-      <h1 id="result">Ingreso de ahorro Exitoso</h1>
+      <div class="alert alert-success" role="alert" id="result">
+    Ingreso de ahorro exitoso.
 
+      <a type="button" href=/User/NuevoAhorro >Volver a ingresar un nuevo ahorro</a>
+      </div>
+
+
+    
     }
