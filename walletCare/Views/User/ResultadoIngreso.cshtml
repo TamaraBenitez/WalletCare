@@ -4,12 +4,12 @@
     bool ingresoError = ViewBag.IngresoError != null ;
 }
 
-   
+   @section Styles{ <link rel="stylesheet" href="~/css/resultadoIngreso.css" />}
 
     @if(ingresoError) {
-    <h1>Debes iniciar sesion para realizar esta accion.</h1>
+    <h1>Debes iniciar sesion para realizar esta accion.  </h1>
     } else {
 
-      <h1>Ingreso de ahorro Exitoso</h1>
+      <h1 id="result">Ingreso de ahorro Exitoso</h1>
 
     }
