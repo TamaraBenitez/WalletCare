@@ -256,6 +256,53 @@ namespace walletCare.Controllers
         }
 
 
+        public IActionResult MostrarRecordatoriosCercanos() {
+
+
+            Usuario usuario= HttpContext.Session.Get<Usuario>("UsuarioLogueado");
+
+             if (usuario != null ) {
+
+
+                   List <Recordatorio> recordatorios = new List<Recordatorio>();
+                recordatorios = db.Recordatorios.Where(r => r.mailUsuario.Equals(usuario.Mail)).ToList();
+
+                List <Recordatorio> recordatorios2 = new List<Recordatorio>();
+
+                foreach(Recordatorio r in recordatorios) {
+
+                    if(  (DateTime.Now- r.FechaEnvio).Days<=2 &&  (DateTime.Now- r.FechaEnvio).Days>=0  ){
+
+
+                        recordatorios2.Add(r);
+                    }
+
+                }
+
+
+
+                if(recordatorios2.Count==0){
+
+                    return View("SinRecodatoriosCercanos");
+                }
+
+               
+                    else {
+                         return View ("MostrarRecordatorios",recordatorios2);
+                   }
+
+
+
+              }
+
+             else {
+
+             return Redirect("/User/ErrorUser");
+            
+            }
+
+        }
+
         
 
 
