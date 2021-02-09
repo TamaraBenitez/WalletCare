@@ -15663,6 +15663,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\usuario\\Desktop\\Github2\\WalletCare\\walletCare\\Views\\User\\CorreoEnviado.cshtml",
+      "TargetPath": "Views\\User\\CorreoEnviado.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\usuario\\Desktop\\Github2\\WalletCare\\walletCare\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
@@ -15705,6 +15710,11 @@
     {
       "FilePath": "c:\\Users\\usuario\\Desktop\\Github2\\WalletCare\\walletCare\\Views\\Home\\Registrarse.cshtml",
       "TargetPath": "Views\\Home\\Registrarse.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\usuario\\Desktop\\Github2\\WalletCare\\walletCare\\Views\\User\\SinRecordatorios.cshtml",
+      "TargetPath": "Views\\User\\SinRecordatorios.cshtml",
       "FileKind": "mvc"
     }
   ],

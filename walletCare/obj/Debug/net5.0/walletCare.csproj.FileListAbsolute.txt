@@ -359,3 +359,5 @@ C:\Users\usuario\Desktop\Github2\WalletCare\walletCare\obj\Debug\net5.0\Razor\Vi
 C:\Users\usuario\Desktop\Github2\WalletCare\walletCare\obj\Debug\net5.0\Razor\Views\User\ResultadoRecordatorio.cshtml.g.cs
 C:\Users\usuario\Desktop\Github2\WalletCare\walletCare\obj\Debug\net5.0\Razor\Views\User\MostrarRecordatorios.cshtml.g.cs
 C:\Users\usuario\Desktop\Github2\WalletCare\walletCare\obj\Debug\net5.0\Razor\Views\User\SinRecordatoriosCercanos.cshtml.g.cs
+C:\Users\usuario\Desktop\Github2\WalletCare\walletCare\obj\Debug\net5.0\Razor\Views\User\CorreoEnviado.cshtml.g.cs
+C:\Users\usuario\Desktop\Github2\WalletCare\walletCare\obj\Debug\net5.0\Razor\Views\User\SinRecordatorios.cshtml.g.cs

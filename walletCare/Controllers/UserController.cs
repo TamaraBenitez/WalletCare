@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
+using System.Net.Mail;
 using System.Threading.Tasks;
 using generico.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -170,8 +171,20 @@ namespace walletCare.Controllers
 
                List<Ingreso> ahorros = new List<Ingreso>();
                ahorros = db.Ingresos.Where(i => i.mailUsuario.Equals(usuario.Mail)).ToList();
-                return View ("MostrarIngresos",ahorros);
 
+                 if(ahorros.Count==0){
+
+                    return View("SinIngresos");
+                }
+
+
+                else {
+
+
+                     return View ("MostrarIngresos",ahorros);
+
+                }
+               
 
            }
             else {
@@ -182,6 +195,11 @@ namespace walletCare.Controllers
         }
 
 
+    public IActionResult SinRecordatorios() {
+
+        return View();
+    }
+
         public IActionResult MostrarRecordatorios() {
 
 
@@ -190,7 +208,19 @@ namespace walletCare.Controllers
 
                 List <Recordatorio> recordatorios = new List<Recordatorio>();
                 recordatorios = db.Recordatorios.Where(r => r.mailUsuario.Equals(usuario.Mail)).ToList();
-                return View ("MostrarRecordatorios",recordatorios);
+
+
+                  if(recordatorios.Count==0){
+
+                    return View("SinRecordatorios");
+                }
+
+                else {
+
+                    return View ("MostrarRecordatorios",recordatorios);
+                }
+
+               
            }
 
 
@@ -306,6 +336,10 @@ namespace walletCare.Controllers
         
 
 
+
+
+
+
         public IActionResult SinRecordatoriosCercanos () {
 
             return View ();
@@ -341,6 +375,66 @@ namespace walletCare.Controllers
         return Redirect ("MostrarRecordatorios");
 
     }
+
+
+
+        [HttpPost]
+       public IActionResult EnviarAlerta(string Titulo,string Texto,int ID) {
+
+
+            Usuario usuario= HttpContext.Session.Get<Usuario>("UsuarioLogueado");
+            Recordatorio recordatorio = db.Recordatorios.FirstOrDefault(r => r.ID == ID);
+
+            if (usuario != null ) { 
+
+                 try
+                {
+                    MailMessage correo= new MailMessage();
+                    correo.From=new MailAddress("grupo1comit@gmail.com");
+                    correo.To.Add(usuario.Mail);
+                    correo.Subject= Titulo;
+                    correo.Body= Texto;
+                    correo.IsBodyHtml= true;
+                    correo.Priority= MailPriority.Normal;
+                    SmtpClient smtp= new SmtpClient();
+                    smtp.Host= "smtp.gmail.com";
+                    smtp.Port=25;
+                    smtp.EnableSsl=true;
+                    smtp.UseDefaultCredentials=true;
+                    string scuentaCorreo="grupo1comit@gmail.com";
+                    string sPasswordCorreo="grupo1com";
+                    smtp.Credentials= new System.Net.NetworkCredential(scuentaCorreo,sPasswordCorreo);
+                    smtp.Send(correo);
+
+                    recordatorio.fueEnviado=true;
+                }
+                catch (Exception ex)
+                {
+                    
+                    ViewBag.Error= ex.Message;
+                }
+
+                 return Redirect ("CorreoEnviado");
+
+            }
+
+
+            else {
+
+                     return Redirect("/User/ErrorUser");
+
+            }
+
+
+
+       }
+
+
+        public IActionResult CorreoEnviado() {
+
+            return View();
+        }
+
 
 
     }
