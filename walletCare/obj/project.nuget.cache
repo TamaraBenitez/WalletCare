@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "DhzfvbeA8yCPs+tnGD9fXFOGHKhqJSm1gtVUm+7Nl44dhABanRSYHVNtJjre5sG4CLTea9IEYJQcaBk7ipxy8A==",
+  "dgSpecHash": "rvhKZpkkst2m1HhLR9n6CGdMFxDWW8UJ/IvfsxPVPf8764C9CXH1HHxoEHPnisvN7xf2wHnnOpYRPd8oYyXvMw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\usuario\\Desktop\\GITHUB\\WalletCare\\walletCare\\walletCare.csproj",
+  "projectFilePath": "C:\\Users\\usuario\\Desktop\\Github2\\WalletCare\\walletCare\\walletCare.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\usuario\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\usuario\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",

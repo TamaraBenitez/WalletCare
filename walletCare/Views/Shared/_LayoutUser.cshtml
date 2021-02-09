@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
     <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@1,500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Lemonada:wght@300&display=swap" rel="stylesheet">
     @RenderSection("Styles", required: false)
 </head>
 <body>
@@ -31,7 +33,23 @@
                              <a class="dropdown-item" asp-area="" asp-controller="User" asp-action="PorMes">Mostrar ahorros por mes</a>
                      </div>
                     </li>
-                             
+
+
+                     <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                               Recordatorios
+                            </a>       
+
+                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                             <a class="dropdown-item" asp-area="" asp-controller="User" asp-action="NuevoRecordatorio">Nuevo recordatorio</a>
+                              <a class="dropdown-item" asp-area="" asp-controller="User" asp-action="MostrarRecordatorios">Mostrar todos los recordatorios</a>
+                              <a class="dropdown-item" asp-area="" asp-controller="User" asp-action="MostrarRecordatoriosCercanos">Mostrar recordatorios cercanos</a>
+                         </div>
+
+
+
+                         </li>
+
 
                     </ul>
 

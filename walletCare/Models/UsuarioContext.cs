@@ -19,6 +19,9 @@ namespace generico.Models
 
             public DbSet<Usuario> Usuarios {get;set;}
 
+
+             public DbSet<Recordatorio> Recordatorios {get;set;}
+
     }
 
 

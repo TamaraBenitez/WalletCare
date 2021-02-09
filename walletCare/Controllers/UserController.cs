@@ -25,7 +25,13 @@ namespace walletCare.Controllers
 
 
      public IActionResult Index()
+
         {
+
+          Usuario usuario= HttpContext.Session.Get<Usuario>("UsuarioLogueado");
+             ViewBag.UsuarioNombre= usuario.NombreDeUsuario;
+        
+
             return View();
         }
 
@@ -35,10 +41,25 @@ namespace walletCare.Controllers
     }
 
 
+    public IActionResult ResultadoRecordatorio() {
+
+        return View();
+
+    }
+
     public IActionResult ResultadoIngreso() {
 
         return View();
     }
+
+
+
+    public IActionResult NuevoRecordatorio() {
+
+
+        return View();
+    }
+
 
         public IActionResult SacarUsuarioEnSesion() {
 
@@ -85,6 +106,49 @@ namespace walletCare.Controllers
 
 
 
+        public IActionResult AgregarRecordatorio(string titulo, string texto,int dia,int anio,int mes,int hora,int minutos) {
+
+
+            Usuario usuario= HttpContext.Session.Get<Usuario>("UsuarioLogueado");
+
+             if(usuario !=null){ 
+
+                 Usuario usuarioBase = db.Usuarios.FirstOrDefault(u => u.Mail.Equals(usuario.Mail));    
+                
+                DateTime envio = new DateTime(anio,mes,dia,hora,minutos,0); 
+               
+
+                Recordatorio nuevoRecodatorio  = new Recordatorio () {
+
+
+                    
+
+                        Titulo=titulo,
+                        Texto= texto,
+                        FechaCreacion=DateTime.Now,
+                        FechaEnvio= envio , 
+                        fueEnviado = false , 
+                        mailUsuario = usuarioBase.Mail
+
+                } ;
+
+
+                    db.Recordatorios.Add(nuevoRecodatorio);
+                    db.SaveChanges();
+
+                   return RedirectToAction("ResultadoRecordatorio","User");
+
+             }
+
+              else {
+                        ViewBag.RecordatorioError= true;
+                    return RedirectToAction("ResultadoRecordatorio","User");
+                }
+
+
+        }
+
+
 
         public JsonResult ConsultarIngresos(){
 
@@ -92,6 +156,12 @@ namespace walletCare.Controllers
             return Json(db.Ingresos.ToList());
         }
 
+
+
+    public JsonResult ConsultarRecordatorios () {
+
+        return Json(db.Recordatorios.ToList());
+    }
 
         public IActionResult MostrarIngresos() {
 
@@ -109,6 +179,27 @@ namespace walletCare.Controllers
              return Redirect("/User/ErrorUser");
             
             }
+        }
+
+
+        public IActionResult MostrarRecordatorios() {
+
+
+             Usuario usuario= HttpContext.Session.Get<Usuario>("UsuarioLogueado");
+            if (usuario != null ) {
+
+                List <Recordatorio> recordatorios = new List<Recordatorio>();
+                recordatorios = db.Recordatorios.Where(r => r.mailUsuario.Equals(usuario.Mail)).ToList();
+                return View ("MostrarRecordatorios",recordatorios);
+           }
+
+
+            else {
+
+             return Redirect("/User/ErrorUser");
+            
+            }
+
         }
 
 
@@ -165,6 +256,15 @@ namespace walletCare.Controllers
         }
 
 
+        
+
+
+        public IActionResult SinRecordatoriosCercanos () {
+
+            return View ();
+        }
+
+
     public IActionResult ErrorUser() {
 
         return View();
@@ -179,6 +279,19 @@ namespace walletCare.Controllers
         db.SaveChanges();
 
         return Redirect("MostrarIngresos");
+
+    }
+
+
+    public IActionResult EliminarRecordatorio(int ID)  {
+
+
+        Recordatorio recordatorio = db.Recordatorios.FirstOrDefault(r => r.ID == ID);
+
+        db.Recordatorios.Remove(recordatorio);
+        db.SaveChanges();
+
+        return Redirect ("MostrarRecordatorios");
 
     }
 

@@ -3,10 +3,28 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace walletCare.Migrations
 {
-    public partial class Creacion : Migration
+    public partial class CreacionInicial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "Recordatorios",
+                columns: table => new
+                {
+                    ID = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Titulo = table.Column<string>(type: "TEXT", nullable: false),
+                    Texto = table.Column<string>(type: "TEXT", nullable: false),
+                    FechaCreacion = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    FechaEnvio = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    fueEnviado = table.Column<bool>(type: "INTEGER", nullable: false),
+                    mailUsuario = table.Column<string>(type: "TEXT", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Recordatorios", x => x.ID);
+                });
+
             migrationBuilder.CreateTable(
                 name: "Usuarios",
                 columns: table => new
@@ -52,6 +70,9 @@ namespace walletCare.Migrations
         {
             migrationBuilder.DropTable(
                 name: "Ingresos");
+
+            migrationBuilder.DropTable(
+                name: "Recordatorios");
 
             migrationBuilder.DropTable(
                 name: "Usuarios");

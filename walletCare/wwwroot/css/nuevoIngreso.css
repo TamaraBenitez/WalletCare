@@ -1,14 +1,6 @@
 
 body {
-    background-image: linear-gradient(
-      to bottom right,
-      #91defe,
-      #99c0f9,
-      #bdb6ec,
-      #d7b3e3,
-      #efb3d5,
-      #f9bccc
-    );
+    background-color: #ebf4e9;
     display: flex;
     flex-direction: column;
     /*align-items: center;*/
@@ -133,15 +125,16 @@ body {
 
 .ahorro {
 
-    font-family: 'Bodoni Moda', serif;
-    font-size:45px;
-    color: #EEB6F7;
+  color:white; text-shadow: black 0.1em 0.1em 0.2em;
+  font-family: 'Lemonada', cursive;
+    font-size:30px;
+    margin-top: 20px;
 }
 
 #guardar{
 
-
-    background-color: #EEB6F7;
-    color: white;
+  margin-top: 20px;
+    background-color: white;
+    color: black;
 
 }

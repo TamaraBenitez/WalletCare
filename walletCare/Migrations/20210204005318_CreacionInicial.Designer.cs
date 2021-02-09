@@ -9,8 +9,8 @@ using generico.Models;
 namespace walletCare.Migrations
 {
     [DbContext(typeof(UsuarioContext))]
-    [Migration("20210105010604_Creacion")]
-    partial class Creacion
+    [Migration("20210204005318_CreacionInicial")]
+    partial class CreacionInicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -42,6 +42,38 @@ namespace walletCare.Migrations
                     b.HasIndex("UsuarioMail");
 
                     b.ToTable("Ingresos");
+                });
+
+            modelBuilder.Entity("generico.Models.Recordatorio", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("FechaCreacion")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("FechaEnvio")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Texto")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Titulo")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<bool>("fueEnviado")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("mailUsuario")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Recordatorios");
                 });
 
             modelBuilder.Entity("generico.Models.Usuario", b =>

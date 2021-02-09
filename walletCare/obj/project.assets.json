@@ -7559,11 +7559,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\usuario\\Desktop\\GITHUB\\WalletCare\\walletCare\\walletCare.csproj",
+      "projectUniqueName": "C:\\Users\\usuario\\Desktop\\Github2\\WalletCare\\walletCare\\walletCare.csproj",
       "projectName": "walletCare",
-      "projectPath": "C:\\Users\\usuario\\Desktop\\GITHUB\\WalletCare\\walletCare\\walletCare.csproj",
+      "projectPath": "C:\\Users\\usuario\\Desktop\\Github2\\WalletCare\\walletCare\\walletCare.csproj",
       "packagesPath": "C:\\Users\\usuario\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\usuario\\Desktop\\GITHUB\\WalletCare\\walletCare\\obj\\",
+      "outputPath": "C:\\Users\\usuario\\Desktop\\Github2\\WalletCare\\walletCare\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\usuario\\AppData\\Roaming\\NuGet\\NuGet.Config",
