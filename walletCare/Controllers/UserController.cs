@@ -164,6 +164,10 @@ namespace walletCare.Controllers
         return Json(db.Recordatorios.ToList());
     }
 
+
+    
+
+
         public IActionResult MostrarIngresos() {
 
            Usuario usuario= HttpContext.Session.Get<Usuario>("UsuarioLogueado");
@@ -256,6 +260,40 @@ namespace walletCare.Controllers
         }
 
 
+        public IActionResult PorAporte() {
+
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult FiltrarPorAporte (double aporte) {
+
+
+             Usuario usuario= HttpContext.Session.Get<Usuario>("UsuarioLogueado");
+            if (usuario != null ) { 
+
+                     List<Ingreso> ahorros = new List<Ingreso>();
+                ahorros = db.Ingresos.Where (i => i.Aporte.Equals(aporte) && i.mailUsuario.Equals(usuario.Mail)).ToList();
+
+                   if(ahorros.Count==0){
+
+                    return View("NoExisteAporte");
+                }
+
+
+                    else {
+                         return View ("MostrarIngresos",ahorros);
+                   }
+
+            }  else {
+
+             return Redirect("/User/ErrorUser");
+            
+            }
+
+        }
+
+
         [HttpPost]
         public IActionResult filtrarPorMes(string mes) {
 
@@ -313,7 +351,7 @@ namespace walletCare.Controllers
 
                 if(recordatorios2.Count==0){
 
-                    return View("SinRecodatoriosCercanos");
+                    return View("SinRecordatoriosCercanos");
                 }
 
                
