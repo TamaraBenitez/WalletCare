@@ -22,6 +22,9 @@ namespace generico.Models
 
              public DbSet<Recordatorio> Recordatorios {get;set;}
 
+
+             public DbSet<Gastos> Gastos {get;set;}
+
     }
 
 

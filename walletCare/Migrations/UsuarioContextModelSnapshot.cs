@@ -16,6 +16,35 @@ namespace walletCare.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "5.0.0");
 
+            modelBuilder.Entity("generico.Models.Gastos", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<double>("Aporte")
+                        .HasColumnType("REAL");
+
+                    b.Property<string>("Categoria")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("fecha")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("mailUsuario")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Gastos");
+                });
+
             modelBuilder.Entity("generico.Models.Ingreso", b =>
                 {
                     b.Property<int>("ID")

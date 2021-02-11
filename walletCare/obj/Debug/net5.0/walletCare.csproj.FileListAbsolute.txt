@@ -363,3 +363,9 @@ C:\Users\usuario\Desktop\Github2\WalletCare\walletCare\obj\Debug\net5.0\Razor\Vi
 C:\Users\usuario\Desktop\Github2\WalletCare\walletCare\obj\Debug\net5.0\Razor\Views\User\SinRecordatorios.cshtml.g.cs
 C:\Users\usuario\Desktop\Github2\WalletCare\walletCare\obj\Debug\net5.0\Razor\Views\User\NoExisteAporte.cshtml.g.cs
 C:\Users\usuario\Desktop\Github2\WalletCare\walletCare\obj\Debug\net5.0\Razor\Views\User\PorAporte.cshtml.g.cs
+C:\Users\usuario\Desktop\Github2\WalletCare\walletCare\obj\Debug\net5.0\Razor\Views\User\AgregarNuevoGasto.cshtml.g.cs
+C:\Users\usuario\Desktop\Github2\WalletCare\walletCare\obj\Debug\net5.0\Razor\Views\User\ResultadoGastos.cshtml.g.cs
+C:\Users\usuario\Desktop\Github2\WalletCare\walletCare\obj\Debug\net5.0\Razor\Views\User\MostrarGastos.cshtml.g.cs
+C:\Users\usuario\Desktop\Github2\WalletCare\walletCare\obj\Debug\net5.0\Razor\Views\User\SinGastos.cshtml.g.cs
+C:\Users\usuario\Desktop\Github2\WalletCare\walletCare\obj\Debug\net5.0\Razor\Views\User\PorMesGastos.cshtml.g.cs
+C:\Users\usuario\Desktop\Github2\WalletCare\walletCare\obj\Debug\net5.0\Razor\Views\User\GastosPorAporte.cshtml.g.cs

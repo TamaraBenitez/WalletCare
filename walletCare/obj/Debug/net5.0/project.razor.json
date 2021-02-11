@@ -15608,6 +15608,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\usuario\\Desktop\\Github2\\WalletCare\\walletCare\\Views\\User\\PorMesGastos.cshtml",
+      "TargetPath": "Views\\User\\PorMesGastos.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\usuario\\Desktop\\Github2\\WalletCare\\walletCare\\Views\\User\\ResultadoRecordatorio.cshtml",
       "TargetPath": "Views\\User\\ResultadoRecordatorio.cshtml",
       "FileKind": "mvc"
@@ -15628,8 +15633,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\usuario\\Desktop\\Github2\\WalletCare\\walletCare\\Views\\User\\MostrarGastos.cshtml",
+      "TargetPath": "Views\\User\\MostrarGastos.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\usuario\\Desktop\\Github2\\WalletCare\\walletCare\\Views\\Home\\ResultadoRegistro.cshtml",
       "TargetPath": "Views\\Home\\ResultadoRegistro.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\usuario\\Desktop\\Github2\\WalletCare\\walletCare\\Views\\User\\ResultadoGastos.cshtml",
+      "TargetPath": "Views\\User\\ResultadoGastos.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -15718,13 +15733,28 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\usuario\\Desktop\\Github2\\WalletCare\\walletCare\\Views\\User\\SinGastos.cshtml",
+      "TargetPath": "Views\\User\\SinGastos.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\usuario\\Desktop\\Github2\\WalletCare\\walletCare\\Views\\Home\\Registrarse.cshtml",
       "TargetPath": "Views\\Home\\Registrarse.cshtml",
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\usuario\\Desktop\\Github2\\WalletCare\\walletCare\\Views\\User\\AgregarNuevoGasto.cshtml",
+      "TargetPath": "Views\\User\\AgregarNuevoGasto.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\usuario\\Desktop\\Github2\\WalletCare\\walletCare\\Views\\User\\SinRecordatorios.cshtml",
       "TargetPath": "Views\\User\\SinRecordatorios.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\usuario\\Desktop\\Github2\\WalletCare\\walletCare\\Views\\User\\GastosPorAporte.cshtml",
+      "TargetPath": "Views\\User\\GastosPorAporte.cshtml",
       "FileKind": "mvc"
     }
   ],

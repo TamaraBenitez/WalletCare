@@ -9,14 +9,43 @@ using generico.Models;
 namespace walletCare.Migrations
 {
     [DbContext(typeof(UsuarioContext))]
-    [Migration("20210204005318_CreacionInicial")]
-    partial class CreacionInicial
+    [Migration("20210210210144_UltimaCreacion")]
+    partial class UltimaCreacion
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "5.0.0");
+
+            modelBuilder.Entity("generico.Models.Gastos", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<double>("Aporte")
+                        .HasColumnType("REAL");
+
+                    b.Property<string>("Categoria")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Nombre")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("fecha")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("mailUsuario")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("Gastos");
+                });
 
             modelBuilder.Entity("generico.Models.Ingreso", b =>
                 {

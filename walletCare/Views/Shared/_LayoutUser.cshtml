@@ -27,7 +27,7 @@
                                 Ahorros
                             </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                             <a class="dropdown-item" asp-area="" asp-controller="User" asp-action="NuevoAhorro">Nuevo ahorro</a>
+                             <a class="dropdown-item" asp-area="" asp-controller="User" asp-action="NuevoAhorro">Agregar nuevo ahorro</a>
                                  <div class="dropdown-divider"></div>
                              <a class="dropdown-item" asp-area="" asp-controller="User" asp-action="MostrarIngresos">Mostrar ahorros totales</a>
                              <a class="dropdown-item" asp-area="" asp-controller="User" asp-action="PorMes">Mostrar ahorros por mes</a>
@@ -42,7 +42,7 @@
                             </a>       
 
                          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                             <a class="dropdown-item" asp-area="" asp-controller="User" asp-action="NuevoRecordatorio">Nuevo recordatorio</a>
+                             <a class="dropdown-item" asp-area="" asp-controller="User" asp-action="NuevoRecordatorio">Agregar nuevo recordatorio</a>
                              <div class="dropdown-divider"></div>
                               <a class="dropdown-item" asp-area="" asp-controller="User" asp-action="MostrarRecordatorios">Mostrar todos los recordatorios</a>
                               <a class="dropdown-item" asp-area="" asp-controller="User" asp-action="MostrarRecordatoriosCercanos">Mostrar recordatorios cercanos</a>
@@ -51,6 +51,23 @@
 
 
                          </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                              Gastos
+                            </a>   
+
+                              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                             <a class="dropdown-item" asp-area="" asp-controller="User" asp-action="AgregarNuevoGasto">Agregar nuevo gasto</a>
+                             <div class="dropdown-divider"></div>
+                             <a class="dropdown-item" asp-area="" asp-controller="User" asp-action="MostrarGastos">Mostrar todos los gastos</a>
+                             <a class="dropdown-item" asp-area="" asp-controller="User" asp-action="PorMesGastos">Mostrar gastos por mes</a>
+                             <a class="dropdown-item" asp-area="" asp-controller="User" asp-action="GastosPorAporte">Mostrar gastos por aporte</a>   
+
+
+                          </li>
+
+
 
 
                     </ul>

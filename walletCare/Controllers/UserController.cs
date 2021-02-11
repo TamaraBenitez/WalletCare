@@ -53,12 +53,22 @@ namespace walletCare.Controllers
         return View();
     }
 
+    public IActionResult ResultadoGastos() {
 
+        return View();
+    }
 
     public IActionResult NuevoRecordatorio() {
 
 
         return View();
+    }
+
+
+    public IActionResult AgregarNuevoGasto() {
+
+
+            return View();
     }
 
 
@@ -104,6 +114,43 @@ namespace walletCare.Controllers
                 }
 
         } 
+
+
+        public IActionResult AgregarGasto (double gasto,string nombre,string categoria) {
+
+
+            Usuario usuario= HttpContext.Session.Get<Usuario>("UsuarioLogueado");
+               
+
+                if(usuario !=null){ 
+
+                    
+                Usuario usuarioBase = db.Usuarios.FirstOrDefault(u => u.Mail.Equals(usuario.Mail));
+               Gastos nuevoGasto = new Gastos(){
+
+                  
+                    Aporte=gasto,
+                    Nombre=nombre,
+                    fecha=DateTime.Now,
+                    Categoria=categoria,
+                    mailUsuario = usuarioBase.Mail
+                    
+                };
+
+                db.Gastos.Add(nuevoGasto);
+                db.SaveChanges();
+
+                    return RedirectToAction("ResultadoGastos","User");
+                }
+
+
+                     else {
+                        ViewBag.GastoError= true;
+                    return RedirectToAction("ResultadoIngreso","User");
+                }
+
+
+        }
 
 
 
@@ -197,6 +244,45 @@ namespace walletCare.Controllers
             
             }
         }
+
+
+        public IActionResult MostrarGastos() {
+
+
+              Usuario usuario= HttpContext.Session.Get<Usuario>("UsuarioLogueado");
+
+             if (usuario != null ) { 
+
+
+                    List<Gastos> gastos = new List<Gastos>();
+                    gastos= db.Gastos.Where(g => g.mailUsuario.Equals(usuario.Mail)).ToList();
+                    if(gastos.Count==0) {
+
+                        return View("SinGastos");
+
+                    }  else {
+
+
+                     return View ("MostrarGastos",gastos);
+
+                }
+
+             }
+
+             else {
+
+             return Redirect("/User/ErrorUser");
+            
+            }
+
+        }
+
+
+
+    public IActionResult SinGastos() {
+
+        return View();
+    }
 
 
     public IActionResult SinRecordatorios() {
@@ -294,6 +380,43 @@ namespace walletCare.Controllers
         }
 
 
+    public IActionResult GastosPorAporte() {
+
+
+        return View();
+    }
+
+
+        [HttpPost]
+       public IActionResult VerGastosPorAporte(Double aporte) {
+
+
+            Usuario usuario= HttpContext.Session.Get<Usuario>("UsuarioLogueado");
+
+             if (usuario != null ) { 
+
+
+                 List<Gastos> gastos = new List<Gastos>();
+                  gastos = db.Gastos.Where (g => g.Aporte.Equals(aporte) && g.mailUsuario.Equals(usuario.Mail)).ToList();
+
+                  if(gastos.Count==0){
+
+                    return View("NoExisteAporte");
+                }
+                 else {
+                         return View ("MostrarGastos",gastos);
+                   }
+             }
+
+             else {
+
+             return Redirect("/User/ErrorUser");
+            
+            }
+
+       }
+
+
         [HttpPost]
         public IActionResult filtrarPorMes(string mes) {
 
@@ -323,6 +446,46 @@ namespace walletCare.Controllers
               
         }
 
+
+        public IActionResult filtrarPorMesGastos(string mes) {
+
+
+              Usuario usuario= HttpContext.Session.Get<Usuario>("UsuarioLogueado");
+                 if (usuario != null ) { 
+
+
+                     List<Gastos> gastos = new List <Gastos>();
+                     gastos = db.Gastos.Where (g => g.fecha.Month.Equals(elegirMes(mes)) && g.mailUsuario.Equals(usuario.Mail)).ToList();
+                    
+                    if(gastos.Count==0){
+
+                        return View("SinGastos");
+
+                        
+                        }
+                     
+                     else {
+                         return View ("MostrarGastos",gastos);
+                   }
+
+                    
+
+
+                 } else {
+
+             return Redirect("/User/ErrorUser");
+
+
+        }
+
+        }
+
+
+
+        public IActionResult PorMesGastos() {
+
+            return View();
+        }
 
         public IActionResult MostrarRecordatoriosCercanos() {
 
@@ -398,6 +561,18 @@ namespace walletCare.Controllers
         db.SaveChanges();
 
         return Redirect("MostrarIngresos");
+
+    }
+
+    public IActionResult EliminarGasto(int ID) {
+
+        Gastos gasto= db.Gastos.FirstOrDefault(g => g.ID == ID);
+
+        db.Gastos.Remove(gasto);
+        db.SaveChanges();
+
+        return Redirect("MostrarGastos");
+
 
     }
 
